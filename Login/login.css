@@ -101,8 +101,11 @@ body {
     position: relative;
     width: 100%;
     height: 5rem;
-    border-bottom: 2px solid rgb(22, 41, 56);
+    /* border-bottom: 2px solid rgb(22, 41, 56); */
     margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .input-box label {
