@@ -1,8 +1,8 @@
-export const homeQuantityToggle = (event, id, stock) => {
-    const currentCardElement = document.querySelector(`#card${id}`);
+export const homeQuantityToggle = (event, product_id, stock) => {
+    const currentCardElement = document.querySelector(`#card${product_id}`);
 
-    //console.log(currentCardElement);
-
+    // console.log(currentCardElement);
+    
     const productQuantity = currentCardElement.querySelector(".productQuantity");
 
     //console.log(productQuantity);
@@ -24,9 +24,10 @@ export const homeQuantityToggle = (event, id, stock) => {
     }
 
     productQuantity.innerText = quantity;
-    console.log(quantity);
+    // console.log(quantity);
 
     productQuantity.setAttribute("data-quantity", quantity);
     return quantity;
+ 
 
 };

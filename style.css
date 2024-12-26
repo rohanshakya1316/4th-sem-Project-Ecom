@@ -90,7 +90,7 @@ a {
 
 /*! layout */
 .container {
-  max-width: 129rem;
+  max-width: 129rem; /* can be 142rem to align*/
   margin: 0 auto;
   padding: 6.6rem 1.4rem;
 }
@@ -104,8 +104,8 @@ a {
     .section-contact,
     footer
   )
-  .container:first-child {
-  padding: 6.4rem 0 2.4rem 0;
+.container:first-child {
+    padding: 6.4rem 0 2.4rem 0;
 }
 
 .grid {
@@ -240,7 +240,7 @@ textarea:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem; /* we override the main container padding property  */
+  padding: 1.8rem;
 }
 
 .section-navbar img {
@@ -257,7 +257,7 @@ textarea:focus-visible {
     color: var(--heading-color);
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     display: inline-block;
     position: relative;
 
@@ -277,6 +277,10 @@ textarea:focus-visible {
 
   & li a:hover:after {
     width: 100%;
+  }
+
+  & i {
+    font-size: 1.6rem;
   }
 }
 

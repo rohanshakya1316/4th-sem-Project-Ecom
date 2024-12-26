@@ -26,8 +26,8 @@
                     <p>Free shipping, 7-day return or refund guarantee.</p>
                 </div>
                 <div class="sign_in_up">
-                    <a href="#">LOG IN</a>
-                    <a href="#">SIGN UP</a>
+                    <a href="#login-form" class="btnLogin-popup">LOG IN</a>
+                    <a href="./Login/login.php">SIGN UP</a>
                 </div>
             </div>
         </section>
@@ -207,7 +207,7 @@
     </section>
     <!-- Policy and Rules End -->
 
-    <!-- Products Section Start -->
+    <!-- Products Section Start -->    
     <section class="section-products container">
         <div class="">
             <h2 class="section-common--heading">Explore ShopVerse Products</h2>
@@ -218,6 +218,7 @@
         </section>
     </section>
     <!-- Product Template Section Start -->
+    <?php include("productsFromDB.php"); ?>
     <template id="productTemplate">
         <div class="cards" id="cardValue">
             <article class="information [card]">
@@ -243,7 +244,7 @@
                 </div>
 
                 <div class="productStockElement">
-                    <p class="productProperty">Available Total Stocks:</p>
+                    <p class="productProperty">Stock:</p>
                     <p class="productStock"></p>
                 </div>
 
@@ -374,10 +375,10 @@
 
             <div class="content_2">
                 <h4>SHOPPING</h4>
-                <a href="#">Computer Store</a>
-                <a href="#">Laptop Store</a>
-                <a href="#">Accessories</a>
-                <a href="#">Sales & Discount</a>
+                <a href="#">Branded Shoes</a>
+                <a href="#">Trending T-Shirts</a>
+                <a href="#">Ladies Wear</a>
+                <a href="#">Gents Wear</a>
               </div>
 
               <div class="content_3">
