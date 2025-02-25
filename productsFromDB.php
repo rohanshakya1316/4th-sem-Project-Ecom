@@ -1,18 +1,7 @@
 <?php
    
    include("dbconfig.php");
-   // $servername = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $dbname = "productdatabase";
-    // $conn = new mysqli($servername, $username, $password, $dbname);
-    // if ($conn->connect_error) {
-    //     die("Connection Failed: " .$conn->connect_error);
-    // }else {
-    //     echo "Connection Successfull!";
-    // }
-
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM products ORDER BY product_id DESC";
     $results = $conn->query($sql);
 
     $products = [];     // Initializing an array to store the data

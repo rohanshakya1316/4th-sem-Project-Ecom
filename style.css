@@ -1,9 +1,9 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: "Urbanist", sans-serif;
   line-height: 1.5;
@@ -25,13 +25,14 @@
   --supporting-color: #ebf3fe;
   --font-color: #424242;
   --heading-color: #000a19;
-  --para-color: black   /* #ddd4cf */; 
+  --para-color: black /* #ddd4cf */;
   --glow-color: hsl(186, 91%, 4%);
 }
 
 html {
   font-size: 62.5%;
   color: var(--textColor);
+  scroll-behavior: smooth;
 }
 
 /* have a look into body once after we done with rest of the styling  */
@@ -104,8 +105,8 @@ a {
     .section-contact,
     footer
   )
-.container:first-child {
-    padding: 6.4rem 0 2.4rem 0;
+  .container:first-child {
+  padding: 6.4rem 0 2.4rem 0;
 }
 
 .grid {
@@ -322,7 +323,7 @@ main {
 }
 
 .custom-shape-divider-bottom-1730795620 .shape-fill {
-  fill: #EE8FA5;
+  fill: #ee8fa5;
 }
 
 main .section-hero {
@@ -472,7 +473,6 @@ main .section-hero {
   }
 }
 
-
 .div-policy {
   padding: 2.5rem;
   display: flex;
@@ -499,7 +499,6 @@ main .section-hero {
   }
 }
 
-
 /***** End Policy Section *****/
 
 /***** why choose Section *****/
@@ -517,9 +516,8 @@ main .section-hero {
   display: flex;
   flex-direction: column;
   align-items: end;
-} 
-& 
-p {
+}
+& p {
   text-align: justify;
 }
 
@@ -710,13 +708,12 @@ footer {
   font-size: 1.6rem;
 }
 
-.footer-container .social-media-container{
+.footer-container .social-media-container {
   display: flex;
   gap: 4rem;
   justify-content: space-evenly;
 }
-& 
-a > i{
+& a > i {
   font-size: 2.5rem;
 }
 
@@ -748,9 +745,9 @@ a > i{
 
 .footer-design {
   width: 100%;
-} 
+}
 
-.footer-design .footer-design-txt p{
+.footer-design .footer-design-txt p {
   border-top: 1px solid var(--secondaryColor);
   padding: 1.6rem 0;
   color: var(--supporting-color);
@@ -805,10 +802,19 @@ a > i{
   -o-border-radius: 10rem;
 }
 
-.productImage {
+.imageContainer .productImage {
+  max-width: 100%;
+  width: 32rem;
+  height: 34rem;
+  mix-blend-mode: darken;
+  object-fit: contain;
+}
+
+.imageContainer .productCartImage {
   max-width: 100%;
   width: 32rem;
   height: auto;
+  mix-blend-mode: darken;
 }
 
 .productPriceElement,

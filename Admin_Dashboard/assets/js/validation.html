@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        color: red;
+        font-size: 12px;
+        display: block;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-overlay" id="popupAddUser">
+      <div class="popup-form">
+        <h2>Add New User</h2>
+
+        <label for="nameProfile">Username:</label>
+        <input
+          type="text"
+          id="nameProfile"
+          placeholder="Enter username"
+          autocomplete="off"
+        />
+        <span id="user_error" class="error"></span>
+
+        <label for="emailProfile">Email:</label>
+        <input
+          type="email"
+          id="emailProfile"
+          placeholder="Enter email"
+          autocomplete="off"
+        />
+        <span id="email_error" class="error"></span>
+
+        <label for="passProfile">Password:</label>
+        <input
+          type="password"
+          id="passProfile"
+          placeholder="Enter password"
+          autocomplete="off"
+        />
+        <span id="pass_error" class="error"></span>
+
+        <label for="cpassProfile">Confirm Password:</label>
+        <input
+          type="password"
+          id="cpassProfile"
+          placeholder="Enter confirm password"
+          autocomplete="off"
+        />
+        <span id="cpass_error" class="error"></span>
+
+        <div class="role-selection">
+          <select name="usertype" id="usertype">
+            <option value="User" selected>User</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+
+        <div class="popup-buttons">
+          <button class="save-btn">Add User</button>
+          <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const username = document.querySelector("#nameProfile");
+        const email = document.querySelector("#emailProfile");
+        const password = document.querySelector("#passProfile");
+        const cpassword = document.querySelector("#cpassProfile");
+        const addButton = document.querySelector(".save-btn");
+
+        function clearErrors() {
+          document
+            .querySelectorAll(".error")
+            .forEach((el) => (el.innerText = ""));
+        }
+
+        function setError(id, message) {
+          let errorElement = document.getElementById(id);
+          if (errorElement) {
+            errorElement.innerText = message;
+          }
+        }
+
+        addButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          clearErrors();
+
+          let isValid = true;
+
+          // Regular Expressions
+          const usernameRegex = /^[A-Za-z0-9]{3,15}$/;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+          // Username validation
+          if (username.value.trim() === "") {
+            setError("user_error", "Username cannot be empty!");
+            isValid = false;
+          } else if (!usernameRegex.test(username.value)) {
+            setError(
+              "user_error",
+              "Username must be 3-15 alphanumeric characters."
+            );
+            isValid = false;
+          }
+
+          // Email validation
+          if (email.value.trim() === "") {
+            setError("email_error", "Email cannot be empty!");
+            isValid = false;
+          } else if (!emailRegex.test(email.value)) {
+            setError("email_error", "Enter a valid email address.");
+            isValid = false;
+          }
+
+          // Password validation
+          if (password.value.trim() === "") {
+            setError("pass_error", "Password cannot be empty!");
+            isValid = false;
+          } else if (!passwordRegex.test(password.value)) {
+            setError(
+              "pass_error",
+              "Password must be 8+ characters, include uppercase, lowercase & a number."
+            );
+            isValid = false;
+          }
+
+          // Confirm Password validation
+          if (cpassword.value.trim() === "") {
+            setError("cpass_error", "Confirm Password cannot be empty!");
+            isValid = false;
+          } else if (cpassword.value !== password.value) {
+            setError("cpass_error", "Passwords do not match!");
+            isValid = false;
+          }
+
+          if (isValid) {
+            alert("User added successfully!");
+            closePopup();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+

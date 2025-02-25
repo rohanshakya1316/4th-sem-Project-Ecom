@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Button Styling */
+      .add-product-btn {
+        padding: 10px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      /* Popup Background */
+      .popup-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Popup Form */
+      .popup-form {
+        background: white;
+        padding: 20px;
+        width: 400px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px #555;
+      }
+
+      .popup-form h2 {
+        margin-top: 0;
+        color: blue;
+      }
+
+      .popup-form label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .popup-form input,
+      .popup-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      /* Button Container */
+      .popup-buttons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .popup-buttons button {
+        padding: 8px 12px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .popup-buttons .save-btn {
+        background: blue;
+        color: white;
+      }
+
+      .popup-buttons .close-btn {
+        background: red;
+        color: white;
+      }
+      .role-selection {
+        margin: 10px 0;
+        padding: 5px 0;
+        position: relative;
+        display: inline-block;
+        width: 14px;
+      }
+
+      .role-selection select {
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem 0.2rem;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Button to Open Popup -->
+    <button class="add-product-btn" onclick="openPopup()">Add Product</button>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-form">
+        <h2>Add New User Profile</h2>
+
+        <label for="nameProfile">Username:</label>
+        <input type="text" id="nameProfile" placeholder="Enter username" />
+
+        <label for="emailProfile">Email:</label>
+        <input type="email" id="emailProfile" placeholder="Enter email" />
+
+        <label for="passProfile">Password: </label>
+        <input type="password" id="passProfile" placeholder="Enter password" />
+
+        <label for="cpassProfile">Confirm Password: </label>
+        <input
+          type="password"
+          id="cpassProfile"
+          placeholder="Enter confirm password"
+        />
+
+        <div class="role-selection">
+          <select name="usertype">
+            <option value="User" selected>User</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+
+        <div class="popup-buttons">
+          <button class="save-btn">Save</button>
+          <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
+
+
+
+<table border="2px">
+  <thead>
+      <tr>
+          <td>S.N.</td>
+          <td>Product</td>
+          <td>Customer</td>
+          <td>Quantity</td>
+          <td>Price</td>
+          <td>Payment</td>
+      </tr>
+  </thead>
+
+  <tbody>
+      <?php
+  $sql = "SELECT 
+          l.username, 
+          p.name AS product, 
+          ci.quantity, 
+          ci.price, 
+          ci.payment_status, 
+          MAX(ci.added_at) AS last_added_at
+          FROM login l
+          JOIN carts c ON l.user_id = c.user_id
+          JOIN cart_items ci ON c.cart_id = ci.cart_id
+          JOIN products p ON ci.product_id = p.product_id
+          GROUP BY l.username, p.name, ci.quantity, ci.price, ci.payment_status
+          ORDER BY last_added_at ASC
+          ;
+          ";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+      $sn = 1;
+      while ($row = $result->fetch_assoc()) {
+          ?>
+      <tr>
+          <td><?php echo $sn; ?></td>
+          <td><?php echo $row['product']; ?></td>
+          <td><?php echo $row['username']; ?></td>
+          <td><?php echo $row['quantity']; ?></td>
+          <td><?php echo $row['price']; ?></td>
+          <td><?php echo $row['payment_status']; ?></td>
+      </tr>
+      <?php
+      $sn++;
+      }
+  }
+  ?>
+  </tbody>
+</table>

@@ -1,63 +1,13 @@
 [
     {
-        "product_id": "1",
-        "name": "SB DUNK Low",
-        "category": "Sneakers",
-        "brand": "Nike",
-        "price": "2999.99",
-        "stock": "50",
-        "description": "Comfortable Sneaker making Attractive.",
-        "image_path": "http://localhost/E-commerce/images/image1-preview.png"
-    },
-    {
-        "product_id": "2",
-        "name": "Sweatshirt",
-        "category": "Hoodies",
-        "brand": "H&M",
-        "price": "2499.99",
-        "stock": "100",
-        "description": "This Sweatshirt is perfect for winter season.",
-        "image_path": "http://localhost/E-commerce/images/image2-preview.png"
-    },
-    {
-        "product_id": "3",
-        "name": "Printed T-Shirt",
+        "product_id": "8",
+        "name": "Bloodline T-Shirt",
         "category": "T-Shirts",
-        "brand": "Represent",
-        "price": "1499.99",
-        "stock": "30",
-        "description": "One of the finest quality T-Shirt.",
-        "image_path": "http://localhost/E-commerce/images/image3-preview.png"
-    },
-    {
-        "product_id": "4",
-        "name": "Jordan 1 Chichago",
-        "category": "Sneakers",
-        "brand": "Nike",
-        "price": "5999.99",
-        "stock": "50",
-        "description": "Comfortable Sneaker with Greater Design",
-        "image_path": "http://localhost/E-commerce/images/image4-preview.png"
-    },
-    {
-        "product_id": "5",
-        "name": "Plain Black Hoodie",
-        "category": "Hoodies",
-        "brand": "Represent",
-        "price": "2999.99",
-        "stock": "30",
-        "description": "Warm and Comfy.",
-        "image_path": "http://localhost/E-commerce/images/image5.png"
-    },
-    {
-        "product_id": "6",
-        "name": "Porsche T-Shirt",
-        "category": "T-Shirts",
-        "brand": "Porsche",
-        "price": "1499.99",
+        "brand": "WWE",
+        "price": "2599.99",
         "stock": "20",
-        "description": "Stylish and Thick Design T-shirt for Gentleness.",
-        "image_path": "http://localhost/E-commerce/images/image7-preview.png"
+        "description": "The OTC Roman Reigns",
+        "image_path": "http://localhost/E-commerce/images/image6.avif"
     },
     {
         "product_id": "7",
@@ -70,13 +20,63 @@
         "image_path": "http://localhost/E-commerce/images/image6-preview.png"
     },
     {
-        "product_id": "8",
-        "name": "Bloodline T-Shirt",
+        "product_id": "6",
+        "name": "Porsche T-Shirt",
         "category": "T-Shirts",
-        "brand": "WWE",
-        "price": "2599.99",
-        "stock": "10",
-        "description": "The OTC Roman Reigns",
-        "image_path": "http://localhost/E-commerce/images/image6.avif"
+        "brand": "Porsche",
+        "price": "1499.99",
+        "stock": "20",
+        "description": "Stylish and Thick Design T-shirt for Gentleness.",
+        "image_path": "http://localhost/E-commerce/images/image7-preview.png"
+    },
+    {
+        "product_id": "5",
+        "name": "Plain Black Hoodie",
+        "category": "Hoodies",
+        "brand": "Represent",
+        "price": "2999.99",
+        "stock": "30",
+        "description": "This Sweatshirt is perfect for winter season.",
+        "image_path": "http://localhost/E-commerce/images/image5.png"
+    },
+    {
+        "product_id": "4",
+        "name": "Jordan 1 Chichago",
+        "category": "Sneakers",
+        "brand": "Nike",
+        "price": "5999.99",
+        "stock": "50",
+        "description": "Comfortable Sneaker with Greater Design",
+        "image_path": "http://localhost/E-commerce/images/image4-preview.png"
+    },
+    {
+        "product_id": "3",
+        "name": "Printed T-Shirt",
+        "category": "T-Shirts",
+        "brand": "Represent",
+        "price": "1499.99",
+        "stock": "30",
+        "description": "One of the finest quality T-Shirt.",
+        "image_path": "http://localhost/E-commerce/images/image3-preview.png"
+    },
+    {
+        "product_id": "2",
+        "name": "Sweatshirt",
+        "category": "Hoodies",
+        "brand": "H&M",
+        "price": "2499.99",
+        "stock": "100",
+        "description": "Warm and Comfy.",
+        "image_path": "http://localhost/E-commerce/images/image2-preview.png"
+    },
+    {
+        "product_id": "1",
+        "name": "SB DUNK Low",
+        "category": "Sneakers",
+        "brand": "Nike",
+        "price": "2999.99",
+        "stock": "20",
+        "description": "Comfortable Sneaker making Attractive.",
+        "image_path": "http://localhost/E-commerce/images/image1-preview.png"
     }
 ]

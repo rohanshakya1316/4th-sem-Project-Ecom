@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Sweatshirt",
+        "category": "Hoodies",
+        "image_path": "http://localhost/E-commerce/images/image2-preview.png",
+        "stock": "100",
+        "product_id": "2",
+        "price": "9999.96",
+        "quantity": "4",
+        "payment_status": "paid"
+    },
+    {
+        "name": "Printed T-Shirt",
+        "category": "T-Shirts",
+        "image_path": "http://localhost/E-commerce/images/image3-preview.png",
+        "stock": "30",
+        "product_id": "3",
+        "price": "7499.95",
+        "quantity": "5",
+        "payment_status": "paid"
+    },
+    {
+        "name": "SB DUNK Low",
+        "category": "Sneakers",
+        "image_path": "http://localhost/E-commerce/images/image1-preview.png",
+        "stock": "50",
+        "product_id": "1",
+        "price": "2999.99",
+        "quantity": "1",
+        "payment_status": "unpaid"
+    }
+]
