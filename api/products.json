@@ -65,7 +65,7 @@
         "category": "Hoodies",
         "brand": "H&M",
         "price": "2499.99",
-        "stock": "100",
+        "stock": "50",
         "description": "Warm and Comfy.",
         "image_path": "http://localhost/E-commerce/images/image2-preview.png"
     },
@@ -74,8 +74,8 @@
         "name": "SB DUNK Low",
         "category": "Sneakers",
         "brand": "Nike",
-        "price": "2999.99",
-        "stock": "20",
+        "price": "2499.99",
+        "stock": "100",
         "description": "Comfortable Sneaker making Attractive.",
         "image_path": "http://localhost/E-commerce/images/image1-preview.png"
     }
