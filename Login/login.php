@@ -30,7 +30,7 @@ if (isset($_POST['login'])) {
 ob_start();
 if (isset($_POST['register'])) {
     // Regular Expressions
-    $usernameRegex = "/^[A-Za-z0-9]{3,15}$/";
+    $usernameRegex = "/^[A-Za-z]{3,15}$/";
     $emailRegex = "/^[A-Za-z0-9]+(?:[.%_+][A-Za-z0-9]+)*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/";
     $passwordRegex = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/";
 
