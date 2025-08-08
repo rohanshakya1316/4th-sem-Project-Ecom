@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     header("Content-Type: application/json");
     include "../dbconfig.php";
 
@@ -8,7 +9,8 @@
         $sql = "DELETE FROM `login` WHERE `user_id` = '$userId'";
         $result = $conn->query($sql);
         if ($result === true) {
-            echo json_encode(["success" => true, "message" => "User deleted successfully!"]);
+            unset($_SESSION['user_name']);
+            echo json_encode(["success" => true, "message" => "User deleted successfully!"]);           
         } else {
             echo json_encode(["success" => false, "message" => "Failed to delete User!" ]);
         }

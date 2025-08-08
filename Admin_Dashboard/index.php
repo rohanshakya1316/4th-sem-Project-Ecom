@@ -172,7 +172,7 @@ if ($_SESSION['loggedIn'] === true) {
                                     }
                                 ?>
                             </div>
-                            <div class="cardName">Comments</div>
+                            <div class="cardName">Enquiry</div>
                         </div>
 
                         <div class="iconBx">
@@ -204,12 +204,22 @@ if ($_SESSION['loggedIn'] === true) {
 
                     <div class="card">
                         <div>
-                            <div class="numbers">1,504</div>
-                            <div class="cardName">Daily Views</div>
+                            <div class="numbers">
+                                <?php 
+                                    $sql = "SELECT COUNT(user_id) AS total_customers FROM `login` WHERE usertype = 'User';";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) { 
+                                        $row = $result->fetch_assoc();
+                                        echo  $row['total_customers'];
+                                    }
+                                ?>
+                            </div>
+                            <div class="cardName">Customers</div>
                         </div>
 
                         <div class="iconBx">
-                            <ion-icon name="eye-outline"></ion-icon>
+                            <ion-icon name="people-outline"></ion-icon>
                         </div>
                     </div>
 
@@ -332,7 +342,7 @@ if ($_SESSION['loggedIn'] === true) {
                             <a class="btn add-product-btn" onclick="openAddPopup()">Add Product</a>
                             <div class="popup-overlay" id="popupAdd">
                                 <div class="popup-form">
-                                    <h2>Add New Prodoct</h2>
+                                    <h2>Add New Product</h2>
 
                                     <label for="name">Name:</label>
                                     <input type="text" id="name" name="name" placeholder="Enter product name" required
@@ -743,7 +753,7 @@ if ($_SESSION['loggedIn'] === true) {
                     <!-- ================ Customer Details List Starts ================= -->
                     <div class="recentOrders">
                         <div class="cardHeader">
-                            <h2>Customer List</h2>
+                            <h2>Message List</h2>
                             <a class="btn" href="#dashboard">Dashboard</a>
 
                         </div>
